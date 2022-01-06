@@ -7,9 +7,6 @@
 #include "functions.h"
 using namespace std;
 
-//This two function still needs to be defined here because it uses List Class
-//To do: Figure how to make it usable in the functions.cpp
-
 void printRecord(List* total, List* computer, List* player, int randnum);
 void deleteClasses(List* total, List* computer, List* player, Difficulty* diff);
 
