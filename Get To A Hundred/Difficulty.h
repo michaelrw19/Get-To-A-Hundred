@@ -23,11 +23,11 @@ public:
 
 	int getChances();
 
-	int getNumber(int tTemp, int winningNum);
+	int getNumber(int tTemp, int winningNum, int pTemp);
 
 	int getNumberEasy(int tTemp, int winningNum);
 
-	int getNumberMedium(int tTemp, int winningNum);
+	int getNumberMedium(int tTemp, int winningNum, int pTemp);
 
 	int getNumberHard(int tTemp, int winningNum);
 };
