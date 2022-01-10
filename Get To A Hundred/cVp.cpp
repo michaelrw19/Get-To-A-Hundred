@@ -69,8 +69,9 @@ int main() {
 
 			//Computer's turn
 			if (turns == 0) { 
-				cTemp = diff->getNumber(tTemp, getWinningNum(tTemp, wNPtr)); 
-
+				cTemp = diff->getNumber(tTemp, getWinningNum(tTemp, wNPtr), pTemp); 
+				pTemp = 0; //Reset to allow the while loop to run again
+				
 				cout << "\nComputer's turn, computer enters: ";
 				Sleep(((rand() % 6) + 1) * 500); //Variatons of pause duration 500 ms - 3000 ms (multiple of 500)
 				cout << cTemp;
@@ -108,7 +109,7 @@ int main() {
 				tTemp += pTemp;
 				player->addNum(pTemp);
 				total->addNum(tTemp);
-				pTemp = 0; //Reset to allow the while loop to run again
+				//pTemp = 0; //Moved to computer's turn (line 73)
 
 				turns = 0;
 			}
