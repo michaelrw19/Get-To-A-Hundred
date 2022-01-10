@@ -1,7 +1,7 @@
 # Get-To-A-Hundred
 [README.txt](https://github.com/michaelrw19/Get-To-A-Hundred/files/7836622/README.txt)
 
-*If the format or spacing below is bad or make the document unclear, take a look at README.txt*
+*If the format or spacing below is bad and make the document unclear, take a look at README.txt*
 
 Note: A multiplayer version (PvP) will be added soon
 
