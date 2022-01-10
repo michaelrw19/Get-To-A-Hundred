@@ -133,6 +133,7 @@ int main() {
 	}
 }
 
+//print all of the numbers that the player and the computer have entered
 void printRecord(List* total, List* computer, List* player, int randnum) {
 	int stage = 1;
 	if (randnum) {
@@ -165,6 +166,7 @@ void printRecord(List* total, List* computer, List* player, int randnum) {
 	}
 }
 
+//delete all dynamic allocated memory 
 void deleteClasses(List* total, List* computer, List* player, Difficulty* diff) {
 	total->deleteNums();
 	computer->deleteNums();
