@@ -5,8 +5,13 @@ using namespace std;
 
 Difficulty::Difficulty(int i) {
 	type = modes[i];
-
+	/*
+	* i = 0, Difficulty = Easy
+	* i = 1, Difficulty = Medium
+	* i = 2, Difficulty = Hard
+	*/
 	if (i == 1) {
+		//Get the type of algorithm randomly
 		medType = (rand() % 6) + 1;
 		if (medType == 4 || medType == 5) {
 			chances = (rand() % 5) + 1;
@@ -38,17 +43,37 @@ int Difficulty::getChances() {
 	return chances;
 }
 
+//Return a number for the computer
 int Difficulty::getNumber(int tTemp, int winningNum) {
 	if (getType().compare(modes[0]) == 0) return getNumberEasy(tTemp, winningNum);
 	else if (getType().compare(modes[1]) == 0) return getNumberMedium(tTemp, winningNum);
 	else return getNumberHard(tTemp, winningNum);
 }
 
+//Return a random number from 1-10 if the winningNum is not 100
+//Return the number to reach 100 otherwise
 int Difficulty::getNumberEasy(int tTemp, int winningNum) {
 	if (winningNum == 100) return winningNum - tTemp;
 	return (rand() % 10) + 1;
 }
 
+/*
+* medType = 1
+*	Return a random number until the winningNum is greater than 67
+* medType = 2
+*	Return getNumberHard(), then getNumberEasy(), then getNumberHard() again, and so on
+* medType = 3
+*	Same as medType = 2, but it starts with getNumberEasy(), then getNumberHard(), and so on
+* medType = 4
+*	Return getNumberEasy() for chances (variable) times randomly (if n = 1). return getNumberHard() otherwise
+* medType = 5
+* 	Return getNumberHard() for chances (variable) times randomly (if n = 1). return getNumberEasy() otherwise
+* medType = 6
+*	Return getNumberHard() or getNumberEasy() randomly.
+* medType = 7 (in progress)
+*	Return a number that the player entered until the winningNum is 100, 
+*	If the player hasn't enter a number (randnum = 0, computer enter the number first), return a random number
+*/
 int Difficulty::getNumberMedium(int tTemp, int winningNum) {
 	int n = (rand() % 2);
 	switch (medType) {
@@ -81,7 +106,11 @@ int Difficulty::getNumberMedium(int tTemp, int winningNum) {
 	}
 }
 
+//Return a number that will always lead to the winning numbers only if the winning numbers havent been reached
+//otherwise return a random number
 int Difficulty::getNumberHard(int tTemp, int winningNum) {
 	if (tTemp != winningNum) return winningNum - tTemp;
 	return (rand() % 10) + 1;
 }
+
+//Note: a more in-dept explanation about the functions can be found in the README.txt
