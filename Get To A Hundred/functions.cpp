@@ -5,6 +5,7 @@
 #include "functions.h"
 using namespace std;
 
+//Return 1 if the input is proper, 0 otherwise
 int inputCheck(string in, char code) {
 	if (in.compare("q") == 0) return -1;
 	else if (in.length() != 1 && in.length() != 2) return 0;
@@ -17,12 +18,14 @@ int inputCheck(string in, char code) {
 	return n;
 }
 
+//Return the next possible winning number that the computer needs to reach
 int getWinningNum(int tTemp, int* winningNums) {
 	for (int i = 0; i < 11; i++) {
 		if (tTemp <= winningNums[i]) return winningNums[i];
 	}
 }
 
+//print the following text
 void printText(string diff, int randnum) {
 	cout << "Let's play a game. Enter 'q' to quit"
 		<< "\n========================================================================"
@@ -38,47 +41,7 @@ void printText(string diff, int randnum) {
 		<< "\nRandom number: " << randnum << endl;
 }
 
-/*
-void printRecord(List* total, List* computer, List* player, int randnum) {
-	int stage = 1;
-	if (randnum) {
-		for (int i = 0; i < total->getLength(); i++) {
-			if (i % 2 == 0) cout << "\n============== " << stage << " ==============" << endl;
-
-			if (i % 2 == 0) cout << "Player enters " << player->getNumAt(i / 2) << endl;
-			else cout << "Computer enters " << computer->getNumAt(i / 2) << endl;
-			cout << "Starting number: " << total->getNumAt(i) << endl;
-
-			if (i % 2 != 0) {
-				cout << "===============================" << endl;
-				stage++;
-			}
-		}
-	}
-	else {
-		for (int i = 0; i < total->getLength(); i++) {
-			if (i % 2 == 0) cout << "\n============== " << stage << " ==============" << endl;
-
-			if (i % 2 == 0) cout << "Computer enters " << computer->getNumAt(i / 2) << endl;
-			else cout << "Player enters " << player->getNumAt(i / 2) << endl;
-			cout << "Starting number: " << total->getNumAt(i) << endl;
-
-			if (i % 2 != 0) {
-				cout << "===============================" << endl;
-				stage++;
-			}
-		}
-	}
-}
-
-void deleteClasses(List* total, List* computer, List* player, Difficulty* diff) {
-	total->deleteNums();
-	computer->deleteNums();
-	player->deleteNums();
-	delete(diff);
-}
-*/
-
+//Return 1 if the player want to play again, 0 otherwise
 int playAgain() {
 	string in = "";
 	while (in.compare("y") != 0 || in.compare("n") != 0 || in.compare("q") != 0) {
@@ -95,6 +58,7 @@ int playAgain() {
 	}
 }
 
+//Return 1 if any of the players have won the game, 2 if any of the players went beyond 100, 0 otherwise
 int winCheck(int tTemp) {
 	if (tTemp == 100) return 1;
 	else if (tTemp > 100) return 2;
