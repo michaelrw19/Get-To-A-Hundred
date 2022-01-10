@@ -1,5 +1,5 @@
 # Get-To-A-Hundred
-[README.txt](https://github.com/michaelrw19/Get-To-A-Hundred/files/7836622/README.txt)
+[README.txt](https://github.com/michaelrw19/Get-To-A-Hundred/files/7841753/README.txt)
 
 *If the format or spacing below is bad and make the document unclear, take a look at README.txt*
 
@@ -54,7 +54,7 @@ Why? Because in order to go from one winningNum to another winningNum, it takes 
 (maximum number any player can enter is 10)
 
 Difficulty: Medium | Function: getNumberMedium(int tTemp, int winningNum)
--> In this difficulty there are 6 different algorithm (soon to be 7) that will produce the number for the computer in different ways.
+-> In this difficulty there are 7 different algorithms that will produce the number for the computer in different ways.
    These 6 algorithm are implemented based on a random number from 1-6. Each number represent the algorithm that will be used.
 
 -> Algorithm 1
@@ -74,7 +74,7 @@ Difficulty: Medium | Function: getNumberMedium(int tTemp, int winningNum)
 -> Algorithm 6
 	- The computer will either use getNumberHard() or getNumberEasy() based on the value of n. If n = 1, use getNumberHard(),
 	else use getNumberEasy()
--> Algorithm 7 (Under progress, doesnt exists yet)
+-> Algorithm 7
 	- The computer will mimic the player's number until the winningNum is greater than or equal to 89, 
 	- If the player hasn't enter a number (The computer enter the number first), return a random number
 
