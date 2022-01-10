@@ -82,10 +82,10 @@ int Difficulty::getNumberMedium(int tTemp, int winningNum) {
 		else return (rand() % 10) + 1;
 	case 2:
 		setMedType(3);
-		return getNumberHard(tTemp, winningNum); //(i.e "Hard") not Rand -> Rand -> Repeat
+		return getNumberHard(tTemp, winningNum);
 	case 3:
 		setMedType(2);
-		return getNumberEasy(tTemp, winningNum); //(i.e "Easy") Rand -> not Rand -> Repeat
+		return getNumberEasy(tTemp, winningNum);
 	case 4:
 		if (n && chances != 0) {
 			setChances(getChances() - 1);
