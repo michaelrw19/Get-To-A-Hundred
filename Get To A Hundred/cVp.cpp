@@ -110,7 +110,7 @@ int main() {
 				player->addNum(pTemp);
 				total->addNum(tTemp);
 				//pTemp = 0; //Moved to computer's turn (line 73)
-
+				// If the above line isnt moved to line 73, then for algorithm 7 the computer will always return 0 instead of the player's number
 				turns = 0;
 			}
 			win = winCheck(tTemp);
