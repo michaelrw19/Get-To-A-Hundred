@@ -4,12 +4,13 @@
 using namespace std;
 
 Difficulty::Difficulty(int i) {
-	type = modes[i-1];
 	/*
 	* i = 0, Difficulty = Easy
 	* i = 1, Difficulty = Medium
 	* i = 2, Difficulty = Hard
 	*/
+	i--; //Index starts from 0, need to be decrease by 1
+	type = modes[i];
 	if (i == 1) {
 		//Get the type of algorithm randomly
 		medType = (rand() % 7) + 1;
