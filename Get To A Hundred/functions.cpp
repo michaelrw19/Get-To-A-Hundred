@@ -25,7 +25,7 @@ int getWinningNum(int tTemp, int* winningNums) {
 }
 
 //print the following text
-void printText(string diff, int randnum) {
+void printText(int mode string diff, int randnum) {
 	cout << "Let's play a game. Enter 'q' to quit"
 		<< "\n========================================================================"
 		<< "\nThe rules are simple: "
@@ -35,9 +35,17 @@ void printText(string diff, int randnum) {
 		<< "\n4. Player who reaches to 100 first wins"
 		<< "\n5. Player who exceeds beyond 100 loses"
 		<< "\n========================================================================" << endl;
-	cout << "Level of difficulty: " << diff << endl;
-	cout << "\nA random number has been rolled. If that number is 1 you go first, else the computer goes first."
-		<< "\nRandom number: " << randnum << endl;
+	if (mode == 1) {
+		cout << "Mode: Singleplayer" << endl;
+		cout << "Level of difficulty: " << diff << endl;
+		cout << "\nA random number has been rolled. If that number is 1, you go first, else the computer goes first."
+			<< "\nRandom number: " << randnum << endl;
+	}
+	else {
+		cout << "Mode: Multiplayer" << endl;
+		cout << "\nA random number has been rolled. If that number is 1, player 1 goes first, else player 2 goes first."
+			<< "\nRandom number: " << randnum << endl;
+	}
 }
 
 //Return 1 if the player want to play again, 0 otherwise
