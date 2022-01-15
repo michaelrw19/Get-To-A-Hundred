@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int inputCheck(string in, char code);
+int inputCheck(string in);
 
 int getWinningNum(int tTemp, int* winningNums);
 
