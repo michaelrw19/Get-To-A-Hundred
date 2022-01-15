@@ -4,7 +4,7 @@
 using namespace std;
 
 Difficulty::Difficulty(int i) {
-	type = modes[i];
+	type = modes[i-1];
 	/*
 	* i = 0, Difficulty = Easy
 	* i = 1, Difficulty = Medium
