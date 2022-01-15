@@ -3,7 +3,7 @@
 
 *If the format or spacing below is bad and make the document unclear, take a look at README.txt*
 
-Note: A multiplayer version (PvP) will be added soon
+UPDATE: A multiplayer version (PvP) is added (15/01/2022)
 
 This program is a math game called "Get to a Hundred". 
 The game can be played by 2 player, in this version a human player will be playing with a computer.
